@@ -12,6 +12,7 @@ module.exports = {
         'border-sidebar': '#3954FF',
         'btn-secondary': '#ED1690',
         'symbol-main': '#ED1690',
+        'back-ranking': '#113C5E',
       },
     },
   },

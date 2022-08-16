@@ -60,3 +60,30 @@ export const monthList = [
 export const lineProgressValues = [
   143, 144, 147, 145, 148, 146, 147, 145, 147, 144,
 ]
+
+export const teamlist = [
+  {
+    avatar: 'anirudh',
+    name: 'Anirudh Arun',
+    role: 'Project Manager',
+    ranking: 9.8,
+  },
+  {
+    avatar: 'samvrant',
+    name: 'Samvrant',
+    role: 'UX Designer',
+    ranking: 9.2,
+  },
+  {
+    avatar: 'aryamann',
+    name: 'Aryamann',
+    role: 'UI Designer',
+    ranking: 9.1,
+  },
+  {
+    avatar: 'dhanush',
+    name: 'Dhanush',
+    role: 'Motion Designer',
+    ranking: 8.5,
+  },
+]
