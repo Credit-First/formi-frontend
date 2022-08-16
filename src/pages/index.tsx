@@ -5,6 +5,12 @@ import BarProgress from '@/components/barProgress'
 import LineProgress from '@/components/lineProgress'
 import Performance from '@/components/performance'
 import { HomeProps } from '@/types'
+import {
+  barProgressList_temp,
+  circleProgresslist_temp,
+  lineProgressList_temp,
+  performanceList_temp,
+} from '@/constants'
 
 const Home = ({
   performanceList,
@@ -34,25 +40,45 @@ const Home = ({
   )
 }
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res_performance = await fetch(
-    `http://localhost:3001/api/getPerformanceList`
-  )
-  const performanceList = await res_performance.json()
+  let performanceList = []
+  try {
+    const res_performance = await fetch(
+      `https://fancy-jalebi-be8209.netlify.app/api/getPerformanceList`
+    )
+    performanceList = await res_performance.json()
+  } catch (error) {
+    performanceList = performanceList_temp
+  }
 
-  const res_circleProgress = await fetch(
-    `http://localhost:3001/api/getCircleProgressList`
-  )
-  const circleProgressList = await res_circleProgress.json()
+  let circleProgressList = []
+  try {
+    const res_circleProgress = await fetch(
+      `https://fancy-jalebi-be8209.netlify.app/api/getCircleProgressList`
+    )
+    circleProgressList = await res_circleProgress.json()
+  } catch (error) {
+    circleProgressList = circleProgresslist_temp
+  }
 
-  const res_barProgress = await fetch(
-    `http://localhost:3001/api/getBarProgressList`
-  )
-  const barProgressList = await res_barProgress.json()
+  let barProgressList = []
+  try {
+    const res_barProgress = await fetch(
+      `https://fancy-jalebi-be8209.netlify.app/api/getBarProgressList`
+    )
+    barProgressList = await res_barProgress.json()
+  } catch (error) {
+    barProgressList = barProgressList_temp
+  }
 
-  const res_lineProgress = await fetch(
-    `http://localhost:3001/api/getLineProgressList`
-  )
-  const lineProgressList = await res_lineProgress.json()
+  let lineProgressList = []
+  try {
+    const res_lineProgress = await fetch(
+      `https://fancy-jalebi-be8209.netlify.app/api/getLineProgressList`
+    )
+    lineProgressList = await res_lineProgress.json()
+  } catch (error) {
+    lineProgressList = lineProgressList_temp
+  }
 
   return {
     props: {
