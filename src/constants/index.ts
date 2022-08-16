@@ -28,34 +28,28 @@ export const monthList = [
 ]
 export const performanceList_temp = [
   {
-    label: 'January',
-    value_1: 123,
-    value_2: 83,
+    avatar: 'anirudh',
+    name: 'Anirudh Arun',
+    role: 'Project Manager',
+    ranking: 9.8,
   },
   {
-    label: 'February',
-    value_1: 140,
-    value_2: 116,
+    avatar: 'samvrant',
+    name: 'Samvrant',
+    role: 'UX Designer',
+    ranking: 9.2,
   },
   {
-    label: 'March',
-    value_1: 175,
-    value_2: 140,
+    avatar: 'aryamann',
+    name: 'Aryamann',
+    role: 'UI Designer',
+    ranking: 9.1,
   },
   {
-    label: 'April',
-    value_1: 146,
-    value_2: 123,
-  },
-  {
-    label: 'May',
-    value_1: 105,
-    value_2: 75,
-  },
-  {
-    label: 'June',
-    value_1: 140,
-    value_2: 116,
+    avatar: 'dhanush',
+    name: 'Dhanush',
+    role: 'Motion Designer',
+    ranking: 8.5,
   },
 ]
 
