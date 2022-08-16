@@ -24,3 +24,17 @@ export interface DropdownListProps {
 export interface SearchInputProps {
   className: string
 }
+
+export interface CircleProgressProps {
+  title: string
+  color: string
+  percent: number
+  amount: number
+  content: string
+}
+export interface CircleProgressBarProps {
+  strokeWidth: number
+  sqSize: number
+  percentage: number
+  strokeColor: string
+}

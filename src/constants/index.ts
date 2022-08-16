@@ -17,3 +17,34 @@ export const sidebarItems = [
 ]
 
 export const dropdownlist = ['Profile', 'Settings', 'Log out']
+
+export const circleProgressList = [
+  {
+    title: 'Work',
+    color: '#FFD339',
+    percent: 50,
+    amount: 75,
+    content: 'Works Today',
+  },
+  {
+    title: 'Analytics',
+    color: '#FF6D39',
+    percent: 25,
+    amount: 310,
+    content: 'Analytics Today',
+  },
+  {
+    title: 'Statistics',
+    color: '#9539FF',
+    percent: 59,
+    amount: 75,
+    content: 'Works Today',
+  },
+  {
+    title: 'Tasks',
+    color: '#3954FF',
+    percent: 75,
+    amount: 15,
+    content: 'Works Today',
+  },
+]
