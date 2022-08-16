@@ -1,32 +1,28 @@
 import { useEffect } from 'react'
 import Chart from 'chart.js'
 import { ChevronDownIcon, DotsVerticalIcon } from '@heroicons/react/outline'
-import { lineProgressValues } from '@/constants'
+import { LineProgressProps, lineProgressProps } from '@/types'
 
-const LineProgress = (): JSX.Element => {
+const LineProgress = ({ data }: LineProgressProps): JSX.Element => {
   useEffect(() => {
     const canvas: HTMLCanvasElement = document.getElementById(
       'line-chart'
     ) as HTMLCanvasElement
     const ctx: any = canvas.getContext('2d')
 
-    const data = {
-      labels: [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-        'July',
-        'August',
-        'September',
-        'Octorber',
-      ],
+    const labels: string[] = []
+    const values: number[] = []
+
+    data.map((item: lineProgressProps) => {
+      labels.push(item.label)
+      values.push(item.value)
+    })
+    const res = {
+      labels: labels,
       datasets: [
         {
           borderColor: '#ED1690',
-          data: lineProgressValues,
+          data: values,
           fill: true,
           barThickness: 8,
           pointStyle: 'circle',
@@ -42,9 +38,7 @@ const LineProgress = (): JSX.Element => {
 
     const config: any = () => ({
       type: 'line',
-      data: (function () {
-        return data
-      })(),
+      data: res,
       options: {
         maintainAspectRatio: true,
         responsive: true,

@@ -38,3 +38,45 @@ export interface CircleProgressBarProps {
   percentage: number
   strokeColor: string
 }
+
+export interface performanceListProps {
+  avatar: string
+  name: string
+  role: string
+  ranking: number
+}
+export interface circleProgresslistProps {
+  title: string
+  color: string
+  percent: number
+  amount: number
+  content: string
+}
+export interface barProgressProps {
+  label: string
+  value_1: number
+  value_2: number
+}
+
+export interface lineProgressProps {
+  label: string
+  value: number
+}
+
+export interface HomeProps {
+  performanceList: performanceListProps[]
+  circleProgressList: circleProgresslistProps[]
+  barProgressList: barProgressProps[]
+  lineProgressList: lineProgressProps[]
+}
+
+export interface PerformanceProps {
+  data: performanceListProps[]
+}
+
+export interface BarProgressProps {
+  data: barProgressProps[]
+}
+export interface LineProgressProps {
+  data: lineProgressProps[]
+}

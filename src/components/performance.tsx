@@ -1,13 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
-import { teamlist } from '@/constants'
+import { performanceListProps, PerformanceProps } from '@/types'
 
-const Performance = (): JSX.Element => {
+const Performance = ({ data }: PerformanceProps): JSX.Element => {
   return (
     <div className="cursor-default w-full h-full bg-back-item text-white rounded-xl p-6">
       <div className="text-sm pb-8">Team Member Performance</div>
       <div className="w-full">
-        {teamlist.map((item) => (
+        {data.map((item: performanceListProps) => (
           <div
             key={item.name}
             className="w-full flex items-center justify-between mb-6 last:mb-0"

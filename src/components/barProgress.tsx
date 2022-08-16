@@ -4,18 +4,29 @@ import { DotsVerticalIcon } from '@heroicons/react/outline'
 import { ChevronDownIcon } from '@heroicons/react/outline'
 import DropdownList from './dropdownList'
 import { monthList } from '@/constants'
+import { barProgressProps, BarProgressProps } from '@/types'
 
-const BarProgress = (): JSX.Element => {
+const BarProgress = ({ data }: BarProgressProps): JSX.Element => {
   useEffect(() => {
+    const labels: string[] = []
+    const value_1: number[] = []
+    const value_2: number[] = []
+
+    data.map((item: barProgressProps) => {
+      labels.push(item.label)
+      value_1.push(item.value_1)
+      value_2.push(item.value_2)
+    })
+
     const config = {
       type: 'bar',
       data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        labels: labels,
         datasets: [
           {
             backgroundColor: '#3954FF',
             borderColor: '#3954FF',
-            data: [123, 140, 175, 146, 105, 140],
+            data: value_1,
             fill: false,
             barThickness: 8,
           },
@@ -23,7 +34,7 @@ const BarProgress = (): JSX.Element => {
             fill: false,
             backgroundColor: '#FFD339',
             borderColor: '#FFD339',
-            data: [83, 116, 140, 123, 75, 116],
+            data: value_2,
             barThickness: 8,
           },
         ],

@@ -16,7 +16,6 @@ const CircleProgress = ({
     const timer = setInterval(() => {
       if (percent > progressPercent) {
         setProgressPercent(progressPercent + 1)
-        console.log(progressPercent)
       }
       clearInterval(timer)
     }, 10)
