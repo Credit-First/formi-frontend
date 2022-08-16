@@ -4,10 +4,10 @@ import BarProgress from '@/components/barProgress'
 import LineProgress from '@/components/lineProgress'
 import Performance from '@/components/performance'
 import { HomeProps } from '@/types'
-import usePerformance from '@/lib/usePerformance';
-import useBarProgress from '@/lib/useBarProgress'
-import useCircleProgress from '@/lib/useCircleProgress'
-import useLineProgress from '@/lib/useLineProgress'
+import getPerformance from '@/lib/getPerformance'
+import getBarProgress from '@/lib/getBarProgress'
+import getCircleProgress from '@/lib/getCircleProgress'
+import getLineProgress from '@/lib/getLineProgress'
 
 const Home = ({
   performanceList,
@@ -37,10 +37,10 @@ const Home = ({
   )
 }
 export async function getStaticProps() {
-  const performanceList = await usePerformance();
-  const barProgressList = await useBarProgress();
-  const lineProgressList = await useLineProgress();
-  const circleProgressList = await useCircleProgress();
+  const performanceList = await getPerformance()
+  const barProgressList = await getBarProgress()
+  const lineProgressList = await getLineProgress()
+  const circleProgressList = await getCircleProgress()
 
   return {
     props: {
