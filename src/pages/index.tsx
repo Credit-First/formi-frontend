@@ -43,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   let performanceList = []
   try {
     const res_performance = await fetch(
-      `https://fancy-jalebi-be8209.netlify.app/api/getPerformanceList`
+      `http://localhost:3000/api/getPerformanceList`
     )
     performanceList = await res_performance.json()
   } catch (error) {
@@ -53,7 +53,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   let circleProgressList = []
   try {
     const res_circleProgress = await fetch(
-      `https://fancy-jalebi-be8209.netlify.app/api/getCircleProgressList`
+      `http://localhost:3000/api/getCircleProgressList`
     )
     circleProgressList = await res_circleProgress.json()
   } catch (error) {
@@ -63,7 +63,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   let barProgressList = []
   try {
     const res_barProgress = await fetch(
-      `https://fancy-jalebi-be8209.netlify.app/api/getBarProgressList`
+      `http://localhost:3000/api/getBarProgressList`
     )
     barProgressList = await res_barProgress.json()
   } catch (error) {
@@ -73,7 +73,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   let lineProgressList = []
   try {
     const res_lineProgress = await fetch(
-      `https://fancy-jalebi-be8209.netlify.app/api/getLineProgressList`
+      `http://localhost:3000/api/getLineProgressList`
     )
     lineProgressList = await res_lineProgress.json()
   } catch (error) {

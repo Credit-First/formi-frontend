@@ -79,7 +79,7 @@ const BarProgress = ({ data }: BarProgressProps): JSX.Element => {
       <div className="flex items-center justify-between pb-9">
         <div className="text-md">Activities</div>
         <div className="flex items-center justify-between text-xs text-t-sidebar">
-          <div className="flex items-center justify-center">
+          <div className="hidden sm:flex items-center justify-center">
             <div className="flex items-center justify-center pr-4">
               <div className="w-2 h-2 bg-chart-200 mr-2" />
               <div>Received</div>
