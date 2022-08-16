@@ -48,3 +48,11 @@ export const circleProgressList = [
     content: 'Works Today',
   },
 ]
+export const monthList = [
+  '1 month',
+  '2 months',
+  '3 months',
+  '4 months',
+  '5 months',
+  '6 months',
+]
