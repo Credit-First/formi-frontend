@@ -15,3 +15,5 @@ export const sidebarItems = [
   { icon: ChartBarIcon, title: 'Report' },
   { icon: CogIcon, title: 'Settings' },
 ]
+
+export const dropdownlist = ['Profile', 'Settings', 'Log out']
