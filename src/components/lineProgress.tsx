@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Image from 'next/image'
 import Chart from 'chart.js'
 import { ChevronDownIcon, DotsVerticalIcon } from '@heroicons/react/outline'
 import { LineProgressProps, lineProgressProps } from '@/types'
@@ -101,7 +102,7 @@ const LineProgress = ({ data }: LineProgressProps): JSX.Element => {
     return function cleanup() {
       myBar.destroy()
     }
-  }, [])
+  }, [data])
   return (
     <div className="w-full h-full bg-back-item text-white rounded-xl p-6">
       <div className="flex items-center justify-between pb-9">
@@ -124,12 +125,15 @@ const LineProgress = ({ data }: LineProgressProps): JSX.Element => {
             <div className="text-xs text-center pb-2">Project Meeting With</div>
             <div className="flex items-center justify-center -space-x-2">
               {performanceList_temp.map((item) => (
-                <img
-                  key={item.name}
-                  className="w-5 h-5 rounded-full border-2 border-white dark:border-gray-800"
-                  src={`/images/team/${item.avatar}.png`}
-                  alt={item.name}
-                />
+                <div key={item.name} className="relative w-5 h-5">
+                  <Image
+                    className="rounded-full border-2 border-white dark:border-gray-800"
+                    src={`/images/team/${item.avatar}.png`}
+                    layout="fill"
+                    objectFit="fill"
+                    alt={item.name}
+                  />
+                </div>
               ))}
             </div>
           </div>
