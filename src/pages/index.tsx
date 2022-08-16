@@ -1,16 +1,13 @@
-import type { GetServerSideProps } from 'next'
 import Layout from '@/layout'
 import CircleProgress from '@/components/circleProgress'
 import BarProgress from '@/components/barProgress'
 import LineProgress from '@/components/lineProgress'
 import Performance from '@/components/performance'
 import { HomeProps } from '@/types'
-import {
-  barProgressList_temp,
-  circleProgresslist_temp,
-  lineProgressList_temp,
-  performanceList_temp,
-} from '@/constants'
+import usePerformance from '@/lib/usePerformance';
+import useBarProgress from '@/lib/useBarProgress'
+import useCircleProgress from '@/lib/useCircleProgress'
+import useLineProgress from '@/lib/useLineProgress'
 
 const Home = ({
   performanceList,
@@ -39,46 +36,11 @@ const Home = ({
     </Layout>
   )
 }
-export const getServerSideProps: GetServerSideProps = async () => {
-  let performanceList = []
-  try {
-    const res_performance = await fetch(
-      `http://localhost:3000/api/getPerformanceList`
-    )
-    performanceList = await res_performance.json()
-  } catch (error) {
-    performanceList = performanceList_temp
-  }
-
-  let circleProgressList = []
-  try {
-    const res_circleProgress = await fetch(
-      `http://localhost:3000/api/getCircleProgressList`
-    )
-    circleProgressList = await res_circleProgress.json()
-  } catch (error) {
-    circleProgressList = circleProgresslist_temp
-  }
-
-  let barProgressList = []
-  try {
-    const res_barProgress = await fetch(
-      `http://localhost:3000/api/getBarProgressList`
-    )
-    barProgressList = await res_barProgress.json()
-  } catch (error) {
-    barProgressList = barProgressList_temp
-  }
-
-  let lineProgressList = []
-  try {
-    const res_lineProgress = await fetch(
-      `http://localhost:3000/api/getLineProgressList`
-    )
-    lineProgressList = await res_lineProgress.json()
-  } catch (error) {
-    lineProgressList = lineProgressList_temp
-  }
+export async function getStaticProps() {
+  const performanceList = await usePerformance();
+  const barProgressList = await useBarProgress();
+  const lineProgressList = await useLineProgress();
+  const circleProgressList = await useCircleProgress();
 
   return {
     props: {
@@ -89,5 +51,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   }
 }
-
 export default Home
