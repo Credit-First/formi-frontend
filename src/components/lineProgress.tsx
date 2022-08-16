@@ -30,6 +30,7 @@ const LineProgress = ({ data }: LineProgressProps): JSX.Element => {
           borderColor: '#ED1690',
           data: values,
           fill: true,
+          backgroundColor: gradient,
           barThickness: 8,
           pointStyle: 'circle',
           pointHoverRadius: 10,

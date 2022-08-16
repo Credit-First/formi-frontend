@@ -19,6 +19,7 @@ const Performance = ({ data }: PerformanceProps): JSX.Element => {
                   src={`/images/team/${item.avatar}.png`}
                   layout="fill"
                   objectFit="fill"
+                  alt="avatar"
                 />
               </div>
               {item.name === 'Anirudh Arun' && (
