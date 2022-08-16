@@ -39,7 +39,7 @@ const Performance = (): JSX.Element => {
                 {item.role}
               </div>
             </div>
-            <div className="w-14 rounded-lg text-center text-t-ranking bg-b-ranking/50 px-3 py-1">
+            <div className="w-14 rounded-lg text-center text-t-ranking bg-back-ranking/50 px-3 py-1">
               {item.ranking}
             </div>
           </div>
