@@ -56,3 +56,7 @@ export const monthList = [
   '5 months',
   '6 months',
 ]
+
+export const lineProgressValues = [
+  143, 144, 147, 145, 148, 146, 147, 145, 147, 144,
+]

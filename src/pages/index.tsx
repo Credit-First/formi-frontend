@@ -3,6 +3,7 @@ import Layout from '@/layout'
 import { circleProgressList } from '@/constants'
 import CircleProgress from '@/components/circleProgress'
 import BarProgress from '@/components/barProgress'
+import LineProgress from '@/components/lineProgress'
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,9 @@ const Home: NextPage = () => {
         </div>
         <div className="w-full h-full col-span-2 md:col-span-4">
           <BarProgress />
+        </div>
+        <div className="w-full h-full col-span-2 md:col-span-4 lg:col-span-5">
+          <LineProgress />
         </div>
       </div>
     </Layout>

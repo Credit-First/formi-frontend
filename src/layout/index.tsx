@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import Head from 'next/head'
 import Seo from './seo'
-import { LayoutProps } from '@/types';
-import Sidebar from './sidebar';
-import Navbar from './navbar';
+import { LayoutProps } from '@/types'
+import Sidebar from './sidebar'
+import Navbar from './navbar'
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
-  const [selectedItem, setSelectedItem] = useState('dashboard');
+  const [selectedItem, setSelectedItem] = useState('dashboard')
 
   return (
     <>
@@ -19,12 +19,13 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
 
       <main>
         <div className="flex">
-          <Sidebar selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
-          <div className='w-full bg-back-main'>
+          <Sidebar
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+          />
+          <div className="w-full bg-back-main">
             <Navbar selectedItem={selectedItem} />
-            <div className='w-full px-9 py-12'>
-              {children}
-            </div>
+            <div className="w-full px-9 py-12">{children}</div>
           </div>
         </div>
       </main>
